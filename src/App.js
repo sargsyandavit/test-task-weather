@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Weather from './Components/WeatherApi/Weather';
+import WeatherSearch from './Components/WeatherSearch/WeatherSearch';
+import { Provider } from 'mobx-react';
+import store from './Store/store';
+
+import {
+  BrowserRouter,
+  Route,
+  Routes
+} from "react-router-dom";
+import HeaderPage from './Components/Header/Header';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      
+      <Provider {...store}>
+        <HeaderPage/>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/pageone' element={<Weather />} exact/>
+          <Route path='/pagetow' element={<WeatherSearch/>} exact/>
+        </Routes>
+      </BrowserRouter>
+      </Provider>
     </div>
   );
 }
