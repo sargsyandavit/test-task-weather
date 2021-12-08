@@ -1,18 +1,21 @@
 import { inject, observer } from "mobx-react";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { countries } from "../../utils";
-import { SelectStyled, ForecastSearch, SearchHref, SectionForecast, Title, SearchCitys, SearchInput, SearchButton, SearchSection, CityTitle, FindSitys } from "./WeatherSearchStyle";
+import { SelectStyled, SearchCitys, SearchButton, SearchSection, FindSitys, SearchItem } from "./WeatherSearchStyle";
 
 const WeatherSearch = ({ weatherStore, ...reset }) => {
     const [city, setCity] = useState('');
+    const [citynmae, setCityname] = useState('');
 
-   const handleChange = (value) => {
-        setCity(value.label);
+   const handleChange = (ev) => {
+        setCity(ev.target.value);
     }
 
     const handleUpdateCity = () => {
         console.log(weatherStore, reset, 'ssssssss')
         weatherStore.getweatherDataByCity(city);
+        setCityname(city);
     }
 
     return (
@@ -24,7 +27,7 @@ const WeatherSearch = ({ weatherStore, ...reset }) => {
        </SearchSection>
      </SearchCitys>
      <FindSitys>
-         
+         <SearchItem><Link to="/">{citynmae}</Link> </SearchItem>
      </FindSitys>
     </>
     );

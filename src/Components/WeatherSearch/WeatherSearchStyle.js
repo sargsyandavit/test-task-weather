@@ -3,7 +3,7 @@ import Select from "react-select";
 
 
 export const SearchCitys = styled.div`
-  width: 525px;
+  width: 600px;
   height: 330px;
   margin: 30px auto;
   background: aliceblue;
@@ -14,7 +14,7 @@ export const SearchCitys = styled.div`
   align-items: center;
   justify-content: center;
   @media (max-width: 525px) {
-    width: 320px;
+    width: 310px;
   }
 `;
 
@@ -49,7 +49,9 @@ export const SearchInput = styled.input`
 export const SearchButton = styled.button`
   width: 120px;
   height: 40px;
-  background-color: white;
+  background-color: darkblue;
+  color: white;
+  font-weight: 600;
   border-radius: 10px;
   font-size: 15px;
   font-family: serif;
@@ -63,15 +65,36 @@ export const SearchButton = styled.button`
 
 export const FindSitys = styled.div`
   width: 270px;
-  height: 280px;
+  height: 80px;
   background-color: white;
   margin: 0 auto;
   border-radius: 10px;
   overflow-x: auto;
   border: 2px solid aliceblue;
+
 `;
 
-export const SelectStyled = styled(Select)`
-  width: 310px;
+export const SelectStyled = styled.input`
+  width: 250px;
   height: 50px;
+  border: 1px dashed darkblue;
+  border-radius: 10px;
+  padding: 0 6px;
+  font-size: 20px;
+  outline: none;
+`;
+
+export const SearchItem = styled.div`
+  width: 200px;
+  height: 55px;
+  border-radius: 20px;
+  margin: 10px 30px;
+  font-weight: 600;
+  font-size: 25px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  color: darkblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 `;

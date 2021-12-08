@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+export const Div = styled.div`
+  
+`;
 
 export const Title = styled.h1`
   font-size: 23px;
@@ -36,12 +40,17 @@ export const SearchHref = styled(Link)`
   align-items: center;
 `;
 
+export const BodyBlock = styled.div`
+  width: 100%;
+`;
+
 export const WeatherSetings = styled.div`
   width: 500px;
   height: 450px;
   margin:  30px auto;
   background-color: #e2e2ed;
   border-radius: 10px;
+  margin: 0 auto;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
 `;
@@ -76,7 +85,8 @@ export const CloudsImg = styled.img`
 
 export const DaysWeatherSection = styled.div`
   margin: 0 auto;
-  width: 1300px;
+  max-width: 1300px;
+  width: 100%;
   height: 550px;
   display: flex;
   align-items: center;
@@ -85,6 +95,9 @@ export const DaysWeatherSection = styled.div`
   border-radius: 10px;
   background-color: #e6e6e9;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  ${props => props.isActive && css`
+    display: none;
+  `}
 `;
 
 export const WeatherSet = styled.div`
@@ -152,6 +165,9 @@ export const WeatherByHours = styled.div`
   display: flex; 
   flex-wrap: wrap;
   justify-content: space-between;
+  ${props => props.isActive && css`
+    display: none;
+  `}
 `;
 
 export const WeatherItems = styled.div`
@@ -167,7 +183,7 @@ export const WeatherItems = styled.div`
 `;
 
 export const CelcucByFaren = styled.div`
-  width: 90%;
+  width: 80%;
   height: 30px;
   margin: 0 auto;
   display: flex;
@@ -182,6 +198,9 @@ export const Celcuc = styled.div`
 
 export const CheckBoxWrapper = styled.div`
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 export const CheckBoxLabel = styled.label`
   position: absolute;
@@ -222,4 +241,24 @@ export const CheckBox = styled.input`
       transition: 0.2s;
     }
   }
+`;
+
+export const ButtonSection = styled.div`
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const SearchchButton = styled.button`
+  width: 200px;
+  height: 40px;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: darkblue;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
 `;
